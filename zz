@@ -1,0 +1,23 @@
+# BEGIN LSCACHE
+# END LSCACHE
+# BEGIN NON_LSCACHE
+# END NON_LSCACHE
+#This Apache config file was created by Duplicator Installer on 2019-09-19 15:56:05.
+#The original can be found in archived file with the name htaccess.orig
+# BEGIN WordPress
+
+DirectoryIndex index.php index.html
+<IfModule mod_php.c>
+    # Restrict PHP access to this specific domain's directory
+    php_value open_basedir "/home/drsinemdurmaz/ozgurkemik.com.tr:/tmp"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
