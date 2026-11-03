@@ -1,0 +1,33 @@
+# BEGIN LSCACHE
+# END LSCACHE
+# BEGIN NON_LSCACHE
+# END NON_LSCACHE
+
+# BEGIN WordPress
+# "BEGIN WordPress" ve "END WordPress" arasındaki yönergeler (satırlar)
+# dinamik olarak oluşturulmuştur ve yalnızca WordPress süzgeçleri ile düzenlenmelidir.
+# Bu imler arasındaki yönergelerde yapılan değişikliklerin üzerine yazılır.
+DirectoryIndex index.php index.html
+<IfModule mod_php.c>
+    # Restrict PHP access to this specific domain's directory
+    php_value open_basedir "/home/drsinemdurmaz/onurnursacan.com:/tmp"
+</IfModule>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+# BEGIN LiteSpeed
+# "BEGIN LiteSpeed" ve "END LiteSpeed" arasındaki yönergeler (satırlar)
+# dinamik olarak oluşturulmuştur ve sadece WordPress süzgeçleri ile düzenlenmelidir.
+# Bu işaretler arasındaki yönergelerde yapılan değişiklikler üzerine yazılacaktır.
+<IfModule Litespeed>
+SetEnv noabort 1
+</IfModule>
+# END LiteSpeed
